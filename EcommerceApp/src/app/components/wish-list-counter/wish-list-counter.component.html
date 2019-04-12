@@ -1,0 +1,52 @@
+
+
+<app-nav-bar></app-nav-bar>
+<h1>My wish list</h1>
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+	<table id="cart" class="table table-hover table-condensed" >
+    				<thead>
+						<tr>
+              <th style="width:50%">Name</th>
+              <th style="width:10%">Price</th>
+							<th style="width:10%">Remove</th>
+						</tr>
+					</thead>
+					<tbody *ngFor="let item of items" >
+						<tr >
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-2 hidden-xs"><img src="{{item.product.ProductPicUrl}}" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-10">
+										<h4 class="nomargin">{{item.product.Name}}</h4>
+	
+									</div>
+								</div>
+							</td>
+							<td data-th="Price">$ {{item.product.Price}}</td>
+						
+							<td class="actions" data-th="">
+								
+								<button (click)="removeFromWishList(item.product.id)" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+							</td>
+						</tr>
+					</tbody>
+				<tfoot>
+						<tr class="visible-xs"></tr>
+						<tr>
+							<a href="/home" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+						</tr>
+                        
+				</tfoot>
+    </table>
+                
+               
+</div>
+ 
+<app-footer  id="footer"></app-footer>

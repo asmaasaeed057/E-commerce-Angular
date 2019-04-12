@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+          <ul class="navbar-nav m-auto">
+
+              <li class="nav-item" style="color: aliceblue; padding: auto; position: absolute;
+              left: 150px; margin: auto;   font-size: large;  font-style: italic;">Welcome {{name?.firstName}}</li>
+              
+              <li class="nav-item">
+                  <a class="nav-link" href="/home" >Home</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/cart" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  cart
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                  <table id="cart" class="table table-hover table-condensed" >
+                        <thead>
+                            <tr>
+                              <th style="width:50%">Name</th>
+                              <th style="width:50%">Quantity</th>
+                              <th style="width:10%">Remove</th>
+                            </tr>
+                        </thead>
+
+                        <tbody *ngFor="let item of items" >
+                          <tr >
+                            <td data-th="Product">
+                              <div class="row">
+                                <div class="col-sm-2 hidden-xs"><img src="{{item.product.ProductPicUrl}}" alt="..." class="img-responsive"/></div>
+                                <div class="col-sm-10">
+                                  <h4 class="nomargin">{{item.product.Name}}</h4>
+                                </div>
+                              </div>
+                            </td>
+                          
+                           
+                            <td data-th="Quantity" class="form-control text-center">{{item.quantity}}</td>
+                            <td class="actions" data-th="">
+                                <button (click)="removeFromCart(item.product.id)" id="btn"><i class="fa fa-trash-o"></i></button>								
+                            </td>
+                          </tr>
+                        </tbody>
+                    
+                    </table>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="/wishlistcounter">Wish List</a>
+              </li>
+              
+          </ul>
+
+          <form class="form-inline my-2 my-lg-0">
+             
+              <a class="btn btn-success btn-sm ml-3" href="/cart">
+                  <i class="fa fa-shopping-cart"></i> 
+                  <span class="badge badge-light">{{totalItems}}</span>
+              </a>
+
+              <a class="btn btn-danger btn-sm ml-3" href="/wishlistcounter">
+                <i class="fa fa-heart"></i> 
+              </a>
+              
+              <a class="nav-link" href="/login">Logout</a>
+            
+          </form>
+      </div>
+  </div>
+  
+</nav>
+
+
+    

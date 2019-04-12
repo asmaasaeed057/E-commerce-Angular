@@ -1,0 +1,79 @@
+<app-nav-bar></app-nav-bar>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>eCommerce Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  </head>
+
+  <body>
+	
+	<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="{{productData[productId-1]['ProductPicUrl']}}" /></div>
+		
+						</div>
+				
+						
+          </div>
+          <br>
+					<div class="details col-md-6">
+						<h3 style="font-size: 20px" class="product-title">{{productData[productId-1]['Name']}}</h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+              </div>
+              <br>
+              <span style="font-size: 20px" style="font-size: 15px" class="review-no">{{productData[productId-1]['Category']}}</span><br><br>
+              <p style="font-size: 15px" class="vote"><strong>{{productData[productId-1]['MainCategory']}}</strong>  <strong>{{productData[productId-1]['SupplierName']}}</strong><strong>product Id: {{productData[productId-1]['ProductId']}}</strong></p><br>
+            </div>
+            
+						<p style="font-size: 15px" class="product-description"><strong>About product</strong> <br><br>{{productData[productId-1]['Description']}}</p>
+						<h4 style="font-size: 15px" class="price">current price: <span>{{productData[productId-1]['Price']}} $</span></h4>
+						<p style="font-size: 15px" class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+						<h5 class="sizes">size:
+							<span class="size" data-toggle="tooltip" title="small">weight : {{productData[productId-1]['WeightMeasure']}}  {{productData[productId-1]['WeightUnit']}}</span>
+							<span class="size" data-toggle="tooltip" title="medium">Width :{{productData[productId-1]['Width']}}  {{productData[productId-1]['DimUnit']}} </span>
+							<span class="size" data-toggle="tooltip" title="large">Depth :{{productData[productId-1]['Depth']}}  {{productData[productId-1]['DimUnit']}}</span>
+							<span class="size" data-toggle="tooltip" title="xtra large">Height :{{productData[productId-1]['Height']}}  {{productData[productId-1]['DimUnit']}}</span>
+            </h5>
+            <br>
+						<h5 class="colors">Available with quantity:
+							<span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+							<span class="color green"> {{productData[productId-1]['Quantity']}}</span>
+							<span class="color blue"></span>
+            </h5>
+            <br>
+						<div class="action">
+							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  <a class="btn btn-warning" href="/home">Go Back</a>
+  </body>
+</html>
+ 
+<app-footer  id="footer"></app-footer>

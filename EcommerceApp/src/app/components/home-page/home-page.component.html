@@ -1,0 +1,68 @@
+<app-nav-bar></app-nav-bar>
+<!DOCTYPE html>
+  <html>
+  <head>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+      <div class="container">
+        <div class="col-xs-12 col-md-6" *ngFor="let product of products">
+          <!-- First product box start here-->
+          <div class="prod-info-main prod-wrap clearfix">
+            <div class="row">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                  <div class="product-image"> 
+                    <img src='{{product.ProductPicUrl}}' alt="194x228" class="img-responsive"> 
+                    <span class="tag2 sale">
+                    SALE
+                  </span>  
+                    
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12">
+                <div class="product-deatil">
+                    <h5 class="name">
+                      <a href="#" style="font-size: 30px">
+                        {{product.Name}} <span style="font-size: 25px">{{product.Category}}</span>
+                      </a>
+                    </h5>
+                    <p class="price-container">
+                      <span>{{product.Price}}$</span>
+                    </p>
+                    <span class="tag1"></span> 
+                </div>
+                <div class="description">
+                  <p>{{product.Description}}</p>
+                </div>
+                <div class="product-info smart-form">
+                  <div class="row">
+                    <div class="col-md-12"> 
+                      <a href="javascript:void(0);" (click)="addToCart(product.id)" class="btn btn-success" > <i class="fa fa-shopping-cart"></i> </a>
+                      <a href="javascript:void(0);" (click)="onSelect(product)" class="btn btn-info"><i class="glyphicon glyphicon-question-sign"></i></a>
+                      <a href="javascript:void(0);"  (click)="addToWishlist(product.id)"  class ="btn btn-danger">
+                        <i class="fa fa-heart"></i> 
+                      </a>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="rating">Rating:
+                        <label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+                        <label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+                        <label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+                        <label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+                        <label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- end product -->
+        </div>
+      </div>
+    </body>
+</html>
+<app-footer></app-footer>
